@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\controllers\EventController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,7 +38,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/events', [EventController::class, 'index'] );
+Route::get('/events', [EventController::class, 'index']);
 
 
 // Route::get('/dashboard', function () {
@@ -50,5 +51,5 @@ Route::get('/events', [EventController::class, 'index'] );
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
 
