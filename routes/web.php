@@ -37,9 +37,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/events', function () {
-    return view('events');
-});
+Route::get('/events', [EventController::class, 'index'] );
 
 
 // Route::get('/dashboard', function () {

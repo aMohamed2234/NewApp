@@ -1,16 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <h1>This is Events Page</h1>
+<div>
+    <h1>Event Page</h1>
 
-    <div class="card bg-danger text-white p-5" style="width: 250px">
-        <div class="card-body">
-            <h5 class="card-title">Event 1</h5>
-            <p class="card-text">This is a event 1</p>
-            <a href="#" class="btn btn-light">View Details</a>
+    @foreach ($events as $event)
+    <div class="container mt-5 d-flex justify-content-center">
+        <div class="card shadow-lg" style="width: 22rem; border-radius: 15px; overflow: hidden;">
+            <div class="card-body text-center">
+                <p class="card-title fw-bold">ID: {{ $event->id }}</p>
+                <h3 class="card-text text-muted">{{ $event->title }}</h3>
+                <p>{{ $event->location }}</p>
             </div>
+        </div>
     </div>
-</div>
+    @endforeach
 
+</div>
 @endsection
