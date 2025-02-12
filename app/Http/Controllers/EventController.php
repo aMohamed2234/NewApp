@@ -11,4 +11,22 @@ class EventController extends Controller
        $events = Event::all();
         return view('events' , compact('events'));
     }
+
+    public function create()
+    {
+
+        return view('create');
+    }
+
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title'=> 'required|string|max:255',
+            'location'=> 'required|string|max:50'
+        ]);
+
+        Event::create($request->all());
+        return redirect('/events')->with('success', 'Event created succesfully');
+    }
 }

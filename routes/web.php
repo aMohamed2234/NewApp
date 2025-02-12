@@ -40,6 +40,10 @@ Route::get('/contact', function () {
 
 Route::get('/events', [EventController::class, 'index']);
 
+Route::get('/create', [EventController::class, 'create']);
+
+Route::post('/store', [EventController::class, 'store']);
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
