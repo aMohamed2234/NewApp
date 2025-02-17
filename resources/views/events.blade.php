@@ -10,8 +10,8 @@
    </div>
    @endif
    <div>
-    <a href="/create">
-        <button class="btn btn-outline-success" type="submit">Create</button>
+    <a href="{{route('events.create')}}">
+        <button type="button" class="btn btn-danger" style="margin-bottom: 50px;">Create</button>
     </a>
 
    </div>
@@ -23,6 +23,9 @@
                     <p class="card-title fw-bold">ID: {{ $event->id }}</p>
                     <h3 class="card-text text-muted">{{ $event->title }}</h3>
                     <p>{{ $event->location }}</p>
+                    <p>
+                        <a href="{{route('events.edit')}}">edit post</a>
+                    </p>
                 </div>
             </div>
         </div>

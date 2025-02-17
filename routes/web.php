@@ -38,11 +38,14 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/events', [EventController::class, 'index']);
 
-Route::get('/create', [EventController::class, 'create']);
+Route::resource('events', [EventController::class, 'class']);
 
-Route::post('/store', [EventController::class, 'store']);
+// Route::get('/create', [EventController::class, 'create']);
+
+// Route::post('/store', [EventController::class, 'store']);
+
+// Route::post('/edit', [EventController::class, 'store']);
 
 
 // Route::get('/dashboard', function () {
