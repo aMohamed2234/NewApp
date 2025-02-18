@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
@@ -11,15 +12,9 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $events = Event::all();
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        return view('events', compact('events'));
     }
 
     /**
@@ -27,7 +22,22 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'location' => 'required|string|max:25',
+        ]);
+
+        $event = Event::findorFail($id);
+        $event->update($request->all());
+        return redirect()->route('events.index')->with('success', 'Event updated successfully');
+    }
+
+      /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        return view('events.create');
     }
 
     /**

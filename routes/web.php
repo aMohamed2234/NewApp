@@ -39,7 +39,7 @@ Route::get('/contact', function () {
 });
 
 
-Route::resource('events', [EventController::class, 'class']);
+Route::resources('events', [EventController::class, 'class']);
 
 // Route::get('/create', [EventController::class, 'create']);
 

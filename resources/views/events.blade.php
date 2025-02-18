@@ -11,7 +11,7 @@
    @endif
    <div>
     <a href="{{route('events.create')}}">
-        <button type="button" class="btn btn-danger" style="margin-bottom: 50px;">Create</button>
+        <button type="button" class="btn btn-danger" style="margin-bottom: 50px;">Create an event</button>
     </a>
 
    </div>

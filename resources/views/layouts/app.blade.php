@@ -30,7 +30,7 @@
                 <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{route('events.index')}}">Events</a>
+                <a class="nav-link active" aria-current="page" href="{{route('events')}}">Events</a>
               </li>
             </ul>
             <form class="d-flex" role="search">
